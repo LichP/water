@@ -1,0 +1,10 @@
+[Setup]
+AppName=<%= $app_name %>
+AppVersion=<%= $app_version %>
+DefaultDirName={pf}\<%= $app_name %>
+DefaultGroupName=<%= $app_name %>
+OutputBaseFilename=<%= $app_name %>Installer
+
+[Icons]
+Name: "{group}\<%= $app_name %>"; Filename: "{app}\<%= $app_name %>.exe"
+Name: "{group}\Uninstall <%= $app_name %>"; Filename: "{uninstallexe}"
