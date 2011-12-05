@@ -44,6 +44,8 @@ be avoided by going down the installer route.
 Phil Stewart
 December 2011
 
+License: MIT
+
 [1]: http://rack.rubyforge.org
 [2]: http://ocra.rubyforge.org
 [3]: http://www.jrsoftware.org
