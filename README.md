@@ -9,11 +9,21 @@ an installer requires [Inno Setup][3]).
 Uses
 ----
 
-I currently have a bunch of Cygwin based Ruby command-line apps/scripts at
-work for automating some of my regular admin tasks, but these aren't very
-accesible for my non-techy colleagues, so my plan is to port these in to a
-web app that can be easily deployed on Windows machines without need for
-hosting etc.
+The idea is to build easy-to-deploy Windows desktop apps powered by web app
+technologies, allowing use of HTML/CSS to build UIs rather than more
+traditional methods.
+
+This desktop web app concept avoids the need for central hosting, and allows
+the app to interact with other desktop applications in ways that aren't
+available server side (e.g. document generation and automation with office
+apps via win32ole).
+
+My personal use case has been to replace a bunch of Cygwin based Ruby
+command-line apps/scripts at work, which automated some of my regular admin
+tasks, but weren't very accesible for my non-techy colleagues. The replacement
+desktop web app has made it much more straightforward to train people in
+performing these tasks, allowing them to be performed more quickly and with
+better outcomes (fewer, easier steps => lower number of mistakes)
 
 Quick Start
 -----------
@@ -35,14 +45,26 @@ installer```
 Known Issues
 ------------
 
+The current implementation is limited to using WEBrick as the webserver. If
+you want to use an alternative server (e.g. Thin, Mongrel, etc) you will need
+to modify applaunch.rb and provide a mechanism for determining that the server
+is running.
+
 Windows firewall will likely complain at you every time you run the
 standalone executable, as the embedded Ruby interpreter will be unpacked to
 a different directory each time (see [Ocra issue 19][6]). This problem can
 be avoided by going down the installer route.
 
+Todo
+----
+
+ * Built in support for WEBrick aternatives
+ * Convert to a gem which provides an executable for deploying the template
+   to new apps.
+
 --
 Phil Stewart
-December 2011
+March 2012
 
 License: MIT
 
